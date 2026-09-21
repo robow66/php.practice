@@ -1,1 +1,382 @@
+# PHP Code Examples --- Explanation
+
+This README explains each of the three PHP code examples shown in the
+images. Each section contains the image, the code, and an explanation of
+how the code works.
+
+------------------------------------------------------------------------
+
+## 1. Switch Statement
+
+
+
+
+
+
+
+
+### Code
+
+``` php
+switch ($answer) {
+    case 'y':
+    case 'Y':
+        echo "The answer was yes";
+        break;
+
+    case 'n':
+    case 'N':
+        echo "The answer was no";
+        break;
+
+    default:
+        echo "Error: $answer is not valid";
+}
+```
+
+### Explanation
+
+This code uses a **`switch` statement** to check the value stored in the
+`$answer` variable.
+
+The `switch` statement compares `$answer` with different possible values
+and executes the matching `case`.
+
+#### `switch ($answer)`
+
+``` php
+switch ($answer) {
+```
+
+This tells PHP to examine the value of `$answer` and find a matching
+`case`.
+
+#### `case 'y':` and `case 'Y':`
+
+``` php
+case 'y':
+case 'Y':
+    echo "The answer was yes";
+    break;
+```
+
+These two cases handle both lowercase `y` and uppercase `Y`.
+
+If `$answer` is `y` or `Y`, PHP executes:
+
+``` php
+echo "The answer was yes";
+```
+
+The `echo` statement displays the message:
+
+``` text
+The answer was yes
+```
+
+#### `break;`
+
+``` php
+break;
+```
+
+`break` stops the `switch` statement after the correct case has been
+executed. Without `break`, PHP could continue into the following cases.
+
+#### `case 'n':` and `case 'N':`
+
+``` php
+case 'n':
+case 'N':
+    echo "The answer was no";
+    break;
+```
+
+These cases handle lowercase `n` and uppercase `N`.
+
+If `$answer` is `n` or `N`, the program displays:
+
+``` text
+The answer was no
+```
+
+#### `default:`
+
+``` php
+default:
+    echo "Error: $answer is not valid";
+```
+
+The `default` case runs when `$answer` does not match any of the
+available cases.
+
+For example:
+
+``` php
+$answer = 'x';
+```
+
+The output will be:
+
+``` text
+Error: x is not valid
+```
+
+### Summary
+
+The purpose of this code is to make a decision based on the value of
+`$answer`. It accepts `y/Y` as **yes**, `n/N` as **no**, and reports an
+error for any other value.
+
+------------------------------------------------------------------------
+
+## 2. If / Elseif / Else Statement
+
+![If Else Statement](if%20else.png)
+
+### Code
+
+``` php
+$answer = 'N';
+
+if ($answer == 'Y' || $answer == 'y') {
+    echo "The answer was yes<br>";
+} elseif ($answer == 'N' || $answer == 'n') {
+    echo "The answer was no<br>";
+} else {
+    echo "Error: $answer is not valid<br>";
+}
+```
+
+### Explanation
+
+This code uses **`if`, `elseif`, and `else`** statements to make a
+decision based on the value of `$answer`.
+
+First, the variable is assigned:
+
+``` php
+$answer = 'N';
+```
+
+This means the current value of `$answer` is `N`.
+
+#### `if` condition
+
+``` php
+if ($answer == 'Y' || $answer == 'y') {
+```
+
+The `if` statement checks whether `$answer` is equal to `Y` or `y`.
+
+The operator:
+
+``` php
+||
+```
+
+means **OR**.
+
+Therefore, this condition means:
+
+> If `$answer` is `Y` OR `$answer` is `y`.
+
+If the condition is true, PHP executes:
+
+``` php
+echo "The answer was yes<br>";
+```
+
+#### `elseif` condition
+
+``` php
+} elseif ($answer == 'N' || $answer == 'n') {
+```
+
+If the first condition is false, PHP checks the `elseif` condition.
+
+This condition checks whether `$answer` is `N` or `n`.
+
+If it is true, PHP displays:
+
+``` text
+The answer was no
+```
+
+#### `else`
+
+``` php
+} else {
+    echo "Error: $answer is not valid<br>";
+}
+```
+
+The `else` block runs when none of the previous conditions are true.
+
+For example:
+
+``` php
+$answer = 'X';
+```
+
+The output will be:
+
+``` text
+Error: X is not valid
+```
+
+#### `<br>`
+
+The code contains:
+
+``` html
+<br>
+```
+
+`<br>` is an HTML line-break tag. It moves the following output to a new
+line when the PHP code is displayed in a web browser.
+
+#### `==`
+
+The operator:
+
+``` php
+==
+```
+
+is used to compare two values. In this example, it checks whether
+`$answer` is equal to a specific letter.
+
+### Summary
+
+This code performs the same general task as the `switch` example, but it
+uses conditional statements:
+
+``` text
+if → first condition
+elseif → second condition
+else → anything that does not match
+```
+
+------------------------------------------------------------------------
+
+## 3. Echo Statement
+
+![Echo Statement](ecco.png)
+
+### Code
+
+``` php
+echo "Hello Robow<br>";
+```
+
+### Explanation
+
+This is a simple PHP example that uses the **`echo` statement** to
+display text.
+
+#### `echo`
+
+``` php
+echo
+```
+
+`echo` is used in PHP to send output to the browser.
+
+In this example, it displays the text:
+
+``` text
+Hello Robow
+```
+
+#### `"Hello Robow"`
+
+``` php
+"Hello Robow"
+```
+
+This is a string. A string is text written inside quotation marks.
+
+The text inside the quotation marks is what PHP displays.
+
+#### `<br>`
+
+``` html
+<br>
+```
+
+`<br>` is an HTML line-break tag.
+
+It tells the browser to move the next content to a new line.
+
+For example:
+
+``` php
+echo "Hello Robow<br>";
+echo "Welcome to PHP";
+```
+
+The browser displays:
+
+``` text
+Hello Robow
+Welcome to PHP
+```
+
+#### `;`
+
+``` php
+;
+```
+
+The semicolon marks the end of the PHP statement.
+
+### Summary
+
+The main purpose of this code is to demonstrate how PHP can display
+information using `echo`.
+
+A simple example is:
+
+``` php
+$name = "Robow";
+echo "Hello $name";
+```
+
+Output:
+
+``` text
+Hello Robow
+```
+
+------------------------------------------------------------------------
+
+# Comparison of the Three Examples
+
+  -----------------------------------------------------------------------
+  Image                   PHP Concept             Purpose
+  ----------------------- ----------------------- -----------------------
+  `switch.png`            `switch / case`         Checks one value
+                                                  against multiple
+                                                  possible values
+
+  `if else.png`           `if / elseif / else`    Makes decisions based
+                                                  on conditions
+
+  `ecco.png`              `echo`                  Displays text or other
+                                                  output
+  -----------------------------------------------------------------------
+
+## Conclusion
+
+These three examples demonstrate basic PHP programming concepts:
+
+-   **`echo`** is used to display output.
+-   **`if / elseif / else`** is used to make decisions based on
+    conditions.
+-   **`switch / case`** is useful when one value needs to be compared
+    with several possible values.
+
+Together, these are important building blocks for learning PHP
+programming.
 
